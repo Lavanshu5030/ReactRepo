@@ -1,0 +1,242 @@
+16/12/2023
+
+React
+-it is library which is use to create rich UI.
+-it work on component
+-it is a library, not a framework
+
+
+To learn react you must be avare about
+-html
+-css
+-js 
+
+*s/w pre requesites
+-nodejs
+-text editor
+
+*there are two ways to create react project
+1. By using npx(if you are using npx then no need to install configuration file)
+    step 1: npx create-react-app project name
+    step 2:cd projectname
+    step 3: npm start
+
+Q. What is npx?
+npx is a package runner tool that comes with npm (Node Package Manager) 
+
+2. By using npm(need to install first configuration file)
+    step 1:npm install create-react-app
+    step 2:create-react-app-projectName
+    step 3:cd projectName
+    step 4: npm start
+
+
+Q. What is the difference between React and Angular
+    -React is a library and Angular is framework 
+    -In react we can perform one way data binding
+    -In Angular we can perform two way data binding
+    -React is faster than Angular
+    -Angular is little bit slower than react
+    -In react we use javascript and XML
+    -In Angular we use typescript and HTML 
+    -React is designed and developed by facebook
+    -Angular is designed and developed by google
+    -React introduced in 2013
+    -Angular is introduced in 2009
+
+Q. What is babel in react
+-In react babel is transpiler which convert modern javascript code into a core
+Babel is a JavaScript compiler that allows you to use the latest ECMAScript (ES) 
+features and syntax in your JavaScript code, even if the environments in which 
+you run your code do not yet support those features. It is a tool commonly used
+in React projects to transpile modern JavaScript code into a format that is 
+compatible with older browsers or environments.
+
+Q. What is SPA
+- SPA is a single page application
+-In this only .html page will display on browser and remaning are it component
+
+
+Q. What is component in react
+- It is the partial part of our web application
+- It can be reuse multiple time
+- It can be anypart like header, footer, section,nav...
+- In react app.js is root component
+- App.js is a default component
+
+
+
+In react we have two types of component
+1.Function component: When your main focus on UI Design in that case we use Function component
+2.Class component: When we have to write complex logical code in that case we use Class component
+
+-What is the purpose of node_modules folder
+node_modules folder
+    *All the third party library and dependency will get install in node_modules folder
+
+package.json file
+-What ever the third party library and dependency we install in our project its entry will be available in package.json file
+
+README.md file
+-it provide the log or information regarding our project how to use it
+-All information about react project
+
+.gitignore file
+-it ignores unnecessary file to upload on github or in production mode 
+
+
+-While creating component always start with upper case 
+
+-How to display individual component
+-To display individual component we have to write component name as a tag where you want
+
+Q. Create a Function component of name MyFcComp and display its output?
+
+
+================================================================
+
+18/12/2023
+
+Q.What is javascriptXML(JSX)?
+    -It allows us to use html code in react
+    -It makes react code easy
+    -In JSX we have parent to wrap another element in it, parent can be any block element
+
+XML is strict language compare to HTML
+
+-What is props?
+    -It is a parameter or Function parameter which is used to pass data inside component
+    -It return object type of data
+    -This Function component we can access props by props.propsName 
+    -In Class component we can access props by this.props.propsName
+
+-use of props in function component
+    import React from 'react';
+
+    // Function component with props
+    const MyComponent = (props) => {
+    // You can use props here to access the data passed from the parent component
+    return (
+        <div>
+        <p>{props.message}</p>
+        </div>
+    );
+    };
+
+    export default MyComponent;
+
+-use in class component
+
+    import React, { Component } from 'react';
+
+    // Class component with props
+    class MyComponent extends Component {
+    render() {
+        return (
+        <div>
+            <p>{this.props.message}</p>
+        </div>
+        );
+    }
+    }
+
+    export default MyComponent;  
+
+
+Create a class of parameter(fname,lname,contact,gender,age)
+and access it by using props        
+
+-Destructor of props    
+
+-What is State in react?
+    -State in react is used to handle essential data in class component
+    -State only available in a class component
+    -We write state in class component constructor
+    -State return us data in object format
+    -We can access state data outside state...by writing this.state.propertyName
+
+Create MyStateComp class component
+
+-setState
+-It is use to update state data
+-How to do Destructor state
+
+-Function and events in react
+-HoverComp
+
+
+Q. Create one class component of name UpdateStateComp and display its output on browser
+-create a state...inside there is property of name count 
+-display this output  
+
+
+-Create CondRenderComp class
+-Rendering meand displaying data on browser
+-Conditional Rendering: displaying Component output or view Conditionaly
+    1. if else
+    2. element as variable: In this we store data in variable and return that variable
+    3. Use of ternary operator: It is short hand syntax for if else.
+        syntax:(condition) ? truepart : falsePart;
+    4. Short circuit: If condition is true then only it will display component output
+    syntax: (condition) && <h2>Admin Login Successfully </h2>;
+
+-How to display images,multimedia
+-How to access data from constant file
+
+-How to use css
+1. Internal css
+2. External css:In this we create a separate css file and import it  component
+3. Module css: if you want to write css property for a particular component in that case we use it
+    -it will work only when you import it
+    -file must save with filename.module.css
+
+-Component Interaction
+    -Accessing data from one component to another component
+    -To access from one component for that they must have parent Child relation, to make parent child 
+    relation, to make parent child relation in between for that  we write child component name as 
+    tag in parent component.
+
+We have seen
+-How to pass state as a props
+-How to method as props 
+
+Create a function component of name MyCSSComp
+
+
+                Create MyImagesComp function component
+
+                Q. make a file, import all the images 
+
+                Create class MyPureComp component 
+                Steps 1: create a file of name MyPureComp.js 
+                Step 2: create class MyPureComp which extends Component
+
+                -ParaentComp (class)
+                -ChildComp (function) 
+
+-PureComponent
+    -It prevents unnecessary re-Rendering of class component
+    -It perform shallow comparison
+    -To achieve this we have to extends class with PureComponent class.
+
+
+To use function in another file
+React.memo() method
+    -It prevents unnecessary re-Rendering of function component.
+    -It perform shallow comparison
+    -To achieve this we have to React.memo() method
+
+
+Q.How to use Bootstrap in React app?
+-How to download Bootstrap
+step 1:install Bootstrap
+npm i bootstap
+
+
+
+
+
+
+
+
+ 
