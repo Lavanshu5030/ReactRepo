@@ -157,7 +157,7 @@ and access it by using props
 
 Create MyStateComp class component
 
--setState
+-setState() method
 -It is use to update state data
 -How to do Destructor state
 
@@ -232,6 +232,297 @@ Q.How to use Bootstrap in React app?
 step 1:install Bootstrap
 npm i bootstap
 
+
+==========================================================================
+19/12/23
+create HoverCounterComp(Class component)
+create ClickCounterComp(Class component)
+
+-You have a state in both the class with property state => count:0
+
+
+imp 
+HOC Higher Order Component
+When we have a same business login and want to share with multiple component
+-In HOC we share logic from function component to another component
+-
+
+Use of react snipet for create class and function component
+
+rce => it will create class component
+rconst => it will generate constructor with super method and with state
+rfce => it will generate function component
+rafce => it will generate function component with arrow function.
+
+*render props :
+-When we have same business logic and want to share with multiple component
+-In this we share logic from class component to another class and function component.
+
+-Fragement or React.Fragement:
+-It is an alternative for JSX.
+-Which remove unwanted element from react project
+
+How to render list by using array data
+instead of using modern dom directly 
+where it does all the neccessary manupulation changes with the virtual dom before making on real dom
+reat changes what need to be change 
+
+
+You have to display employee information in table with empId, EmpName, empPost, empsalary,
+empGender, empContact, empAddress for 10 employee
+
+
+===============================================================
+20/12/2023
+-ErrorBoundary
+-It is a component in react which use to handle errors in component
+-In this we use two component lifecycle method
+1. getDerivedStateFormError :It is the static method which invoke when error occure in component
+                             and it return state state value 
+2. componentDidcatch :it display error log(information)
+
+Q. Create a component function component?
+of name UserComp
+
+-Component lifecycle method 
+-Class component has lifecycle method
+-It comes with four phases
+1.Mounting:
+            -constructor: it invoke automatically when component initialize.
+            -getDerivedStateFormPromps:it is a static method which is use to assign data comming from
+                                       props to state
+            -render: It is used to display component data or information on browser
+
+            -componentDidcatch:It will execute once after render method
+
+2.Update phases, it gives us boolean value
+            -shouldcomponentUpdate:It is use to decide weather component should update or not
+
+            -getSnapshotBeforUpdate:it hold previous data or information of state and props 
+            -render
+            -componentWillupdate:
+3. Unmounting phase:
+            -ComponentWillUnmount:It will execute just before deleting an component
+4.Error Phase:
+            -getDerivedStateFromError:
+            -componentDidcatch.   
+
+Routing in react:
+-Navigation on component to display data
+-In this we create Routing path for component and we write path name in browser url to display
+component view or output.
+
+-To perform Routing in react first we have to install using :react-router-dom library
+install by using:npm i react-router-dom
+
+-In react-router-dom library it contain BrowserRouter, Routes and Route library which 
+is use to perform Routing.
+
+-In Routing BrowserRouter must be parent element for all routing, means all routing
+should under BrowserRouter.
+
+-Route is used to create a path
+
+-There are multiple types of Routing
+1. Naming Routing: By Writing path name in browser url to display component output
+
+2. default Routing: display component view by default means without writing path name
+                    in browser, in this pathname must be blank
+
+3. Parameterized Routing:In this we have to pass parameter with pathname in browser
+                         url
+
+4. Child Routing:
+
+5. WildCard Routing: display component output when you write wrong pathname in browser url,
+                    for this we have to * in path name
+
+Note Imp point:WildCard routing always define at last otherwise other routings won't work
+
+Q. Creating WildCard routing
+1.  PageNotFound.js filename
+2. Create function of name PageNotFound()
+3. Write <Route path = '/*' element={<PageNotFound />}></Route>
+
+Q. Create a function component of name MyRoutingComp( function)
+
+Q. Create a footerComp function component having div with class 'text-primary' 
+and write This app is designed and developed by Lavanshu Deshmukh and copywrite symbol
+
+Q. Create a ReactHookComp function component 
+  2. Create UseStateHookComp (function)
+  3. Create UseEffectHookComp (function)
+
+-React Hooks
+    -Hooks in react function component provide class component features and allows to use 
+    state in function component
+    -In react hooks introduce in react version 16
+
+
+
+Rules for hooks:
+    Hooks works with function component only
+    Hooks can not be render Conditionaly.
+    hooks always use in top level component.
+
+-useState hook:
+    -it allows us to use state in function component.
+    -It gives us two value in array 
+    1. is current-state and
+    2. function to update state
+    3. To use useState hook first we have to import from react library
+-in useState hook we can pass number, string, boolean, array and object type of data 
+
+
+-UseEffect Hook
+    -It is used to perform side effect or action in function component.
+    -side effect means fetching data from server, Dom manupulation and event handling.
+    -UseEffect hooks takes two parameter
+    1. callback function
+    2. Array or dependency
+    -UseEffect hooks execute after render method
+
+-How to create REST fake API
+step 1: install json-server search on npm
+using comand:npm install -g json-server 
+
+Step 2: Create database folder inside shared folder
+src => shared folder => database => db.json(file)
+
+{
+    "product":[
+        {"id":101, "name": "Laptop", "price": 55000, "company": "HP"},
+        {"id":102, "name": "Mobile", "price": 3550, "company": "Oppo"},
+        {"id":103, "name": "USB", "price": 540, "company": "Sony"},
+        {"id":104, "name": "Adaptor", "price": 3454, "company": "Toshiba"},
+        {"id":105, "name": "Cable", "price": 550, "company": "China"},
+
+    ]
+}
+Run this command to start server
+json-server --watch -p 8888 db.json
+
+*Concurrently:
+search Concurrently on npm's website
+step1:
+install by using:npm i -g concurrently
+step 2:
+go to package.json file write command
+        "json-server":"cd src/shared/database && json-server --watch -p 8888 db.json",
+        "start-dev":"concurrently \"npm start\" \"npm run json-server\"",
+
+Step 3: Stop all server and write one command in project path
+npm run start-dev    
+
+-Use of font awesome website
+-search font-awesome on npm website
+step 1:
+-install it by using : npm i font-awesome
+
+step 2:
+-Go to index.js file and import it.
+import '../node_modules/font-awesome/css/font-awesome.min.css'
+
+step 3:
+go to their official website and copy symbolcode and use in your project
+https://fontawesome.com/v4
+
+create EditProductComp.js
+
+use of useNavigate hook
+use of useParams hook
+
+we perform put request 
+
+React-bootstap:
+It provide in built component
+-component provide
+
+step 1:
+install react bootstap using command
+npm install react-bootstrap bootstrap
+
+step 2:
+import its path in index.js file
+if bootstrap path is added then no need
+
+step 3:
+Then use it react app
+
+Web-Storage
+-It is use to store user data on browser
+-there is are two types
+1:local Storage: It is used to store user data permanently
+    localStorage.setItem("user1", "sammed"); to set user on localStorage
+    localStorage.setItem("user2","Vishwas"); 
+    localStorage.getItem("user1"): to get the data
+    localStorage.removeItem("user3"); to remove a specific data
+    localStorage.clear(); to clear all the data
+
+
+2:Session Storage: It is used to store user data for limited time
+  sessionStorage.setItem("user1", "sammed"); to set user on localStorage
+    sessionStorage.setItem("user2","Vishwas"); 
+    sessionStorage.getItem("user1"): to get the data
+    sessionStorage.removeItem("user3"); to remove a specific data
+    sessionStorage.clear(); to clear all the data
+
+
+"users":[
+    {"id":1, "userid":"admin","userpass":"admin@123"},
+    {"id":2, "userid":"king","userpass":"king@123"},
+        {"id":2, "userid":"king","userpass":"king@123"},    
+]  
+
+Q.Create LoginComp Function component
+
+-Material UI
+How to install Material UI using command
+npm install @mui/material @emotion/react @emotion/styled
+
+-To use Material UI concepts
+npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+
+-useRef hooks
+-It allows to access down the node directly as well as its
+
+
+-What is redux?
+    -redux is not tied to react
+    -can be used with React, Angular,Vue or even vanilla javascript
+    -redux is a state container
+        -redux stores the state of your application
+        
+-redux is predictable state constainer application for javascript apps
+-redux can change the state of the application
+
+React + redux
+Why would we want to use redux?
+-Component in react have their own state
+
+React Works on 3, 4 concepts
+1. store
+2. Reducer
+3. action
+-It stores or hold the state of javascript application
+
+1.Store -It store discription of your operation...which you are going to perform
+2.action-It is the plane javascript object which are type property which store string constant value
+3.Reducer: it perfom state transition depending on action and store
+
+-What is redux?
+-What is store?
+-What is action?
+-What is Reducer?
+
+
+
+
+
+
+
+
+                    
 
 
 
